@@ -1,26 +1,21 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link Shortener</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Link Shortener</h1>
-    <form id="shorten-form">
-        <label for="long-url">Long URL:</label>
-        <input type="url" id="long-url" required>
-        <button type="button" onclick="shortenUrl()">Shorten</button>
-    </form>
-    <div id="shortened-link"></div>
-
-    <script>
-        function shortenUrl() {
-            var longUrl = document.getElementById('long-url').value;
-            // Implement logic to call the serverless function/API to shorten the URL
-            // Display the shortened link to the user
-        }
-    </script>
+    <div class="container">
+        <h1>Link Shortener</h1>
+        <form id="shorten-form">
+            <label for="long-url">Long URL:</label>
+            <input type="url" id="long-url" required>
+            <button type="button" onclick="shortenUrl()">Shorten</button>
+        </form>
+        <div id="shortened-link"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
