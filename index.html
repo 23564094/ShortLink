@@ -1,82 +1,26 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Short Link Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 300px;
-            margin-bottom: 20px;
-        }
-
-        input {
-            margin-bottom: 10px;
-            padding: 8px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-    </style>
+    <title>Link Shortener</title>
 </head>
 <body>
-
-    <h1>Short Link Website</h1>
-
-    <form id="shortLinkForm">
-        <label for="originalUrl">Enter URL:</label>
-        <input type="url" id="originalUrl" name="originalUrl" required>
-        <button type="button" onclick="generateShortLink()">Generate Short Link</button>
+    <h1>Link Shortener</h1>
+    <form id="shorten-form">
+        <label for="long-url">Long URL:</label>
+        <input type="url" id="long-url" required>
+        <button type="button" onclick="shortenUrl()">Shorten</button>
     </form>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Original URL</th>
-                <th>Short Link</th>
-            </tr>
-        </thead>
-        <tbody id="linkList">
-            <!-- Links will be dynamically added here -->
-        </tbody>
-    </table>
+    <div id="shortened-link"></div>
 
     <script>
-        function generateShortLink() {
-            // Add your logic here to generate short links and update the table
-            // You can use JavaScript to handle this part, and potentially interact with a server-side script.
-
-            // For simplicity, let's assume a basic example where the short link is just the original URL.
-            const originalUrl = document.getElementById('originalUrl').value;
-            const shortLink = originalUrl;
-
-            // Update the table with the new link
-            const table = document.getElementById('linkList');
-            const newRow = table.insertRow(-1);
-            const cell1 = newRow.insertCell(0);
-            const cell2 = newRow.insertCell(1);
-            cell1.textContent = originalUrl;
-            cell2.innerHTML = `<a href="${shortLink}" target="_blank">${shortLink}</a>`;
-
-            // You may want to save the data to a server or use a more sophisticated shortening algorithm.
+        function shortenUrl() {
+            var longUrl = document.getElementById('long-url').value;
+            // Implement logic to call the serverless function/API to shorten the URL
+            // Display the shortened link to the user
         }
     </script>
-
 </body>
 </html>
